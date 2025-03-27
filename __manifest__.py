@@ -3,6 +3,14 @@
     'version':'1.0',
     'author':'the best',
     'description':' ',
-    'depends':['base'],
-    'data':[]
+    'depends':['base','web'],
+    'data':[
+        'security/ir.model.access.csv',
+        'views/partenaire.xml',
+        'views/menu.xml',
+    ],
+    'assets':{
+        'web.assets_backend':['desk/static/css/global.css']
+    }
+   
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+ <!-- vue tree -->
+        <record id="view_partenaire_tree" model="ir.ui.view">
+        <field name="name">partenaire.tree</field>
+        <field name="model">partenaire</field>
+        <field name="arch" type="xml" >
+            <tree  class="tree" string="Partenaires" >
+                <field name="type_part"/>
+                <field name="nom"/>
+                <field name="prenom"/>
+                <field name="tel"/>
+                <field name="adress"/>
+            </tree>
+        </field>
+    </record>
+
+ <!-- vue form -->
+
+  <record id="view_partenaire_form" model="ir.ui.view">
+        <field name="name">partenaire.form</field>
+        <field name="model">partenaire</field>
+        <field name="arch" type="xml" >
+            <form  class="form" string="Partenaires" >
+                <group>
+                    
+                        <field name="type_part" />
+                        <field name="nom"/>
+                        <field name="prenom"/>
+                        <field name="tel"/>
+                        <field name="adress"/>
+                  
+                  </group>
+            </form>
+        </field>
+    </record>
+
+
+
+
+  <record id="action_partenaire_tree" model="ir.actions.act_window">
+        <field name="name">Partenaires</field>
+        <field name="res_model">partenaire</field>
+        <field name="view_mode">tree</field>
+ </record>
+
+  <record id="action_partenaire_form" model="ir.actions.act_window">
+        <field name="name">Partenaires</field>
+        <field name="res_model">partenaire</field>
+        <field name="view_mode">form</field>
+ </record>
+</odoo>

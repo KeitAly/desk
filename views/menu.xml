@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <menuitem
+    id="menu_principle"
+    name="Desk"
+    />
+ <!-- menu location-->
+    <menuitem id="menu_location" 
+    name="Location" parent="menu_principle" 
+    sequence="1" />
+
+
+
+
+
+    <!-- menu partenaire-->
+    <menuitem id="menu_partenaire" 
+    name="Partenaires" parent="menu_principle" 
+    sequence="2" />
+
+        <menuitem id="partenaire_liste" 
+            name="liste" parent="menu_partenaire" 
+            sequence="1" action="action_partenaire_tree"/>
+
+        <menuitem id="partenaire_form" 
+            name="Nouveau" parent="menu_partenaire" 
+            sequence="2" action="action_partenaire_form"/>
+
+
+   <!-- menu immobiler-->
+    <menuitem id="menu_imo" 
+    name="Immobilier" parent="menu_principle" 
+    sequence="3" />
+</odoo>
