@@ -10,3 +10,8 @@ class Partenaire(models.Model):
     prenom = fields.Char(string="Prénom")
     tel = fields.Char(string="Téléphone")
     adress = fields.Char(string="Adresse")
+    supprimer = fields.Boolean(string="supprimer",default=False)
+
+    def supression(self):
+        for ligne in self:
+            ligne.write({'supprimer':True})

@@ -11,18 +11,19 @@
     sequence="1" />
 
 
-
-
-
     <!-- menu partenaire-->
     <menuitem id="menu_partenaire" 
     name="Partenaires" parent="menu_principle" 
     sequence="2" />
-
+        <!-- menu liste des partenaires-->
         <menuitem id="partenaire_liste" 
             name="liste" parent="menu_partenaire" 
             sequence="1" action="action_partenaire_tree"/>
-
+        <!-- menu liste des ancien partenaires-->
+        <menuitem id="action_ancien_part" 
+            name="ancien partenaire" parent="menu_partenaire" 
+            sequence="3" action="action_ancien_partenaire"/>
+            <!-- menu nouveau partenaires-->
         <menuitem id="partenaire_form" 
             name="Nouveau" parent="menu_partenaire" 
             sequence="2" action="action_partenaire_form"/>
