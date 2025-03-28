@@ -7,6 +7,7 @@
     'data':[
         'security/ir.model.access.csv',
         'views/partenaire.xml',
+        'views/immobilier.xml',
         'views/menu.xml',
     ],
     'assets':{

@@ -19,7 +19,7 @@
         <menuitem id="partenaire_liste" 
             name="liste" parent="menu_partenaire" 
             sequence="1" action="action_partenaire_tree"/>
-        <!-- menu liste des ancien partenaires-->
+        <!-- menu liste des anciens partenaires-->
         <menuitem id="action_ancien_part" 
             name="ancien partenaire" parent="menu_partenaire" 
             sequence="3" action="action_ancien_partenaire"/>
@@ -29,8 +29,25 @@
             sequence="2" action="action_partenaire_form"/>
 
 
-   <!-- menu immobiler-->
-    <menuitem id="menu_imo" 
+   <!-- menu immobilier-->
+    <menuitem id="menu_immobilier" 
     name="Immobilier" parent="menu_principle" 
     sequence="3" />
+
+<!-- Sous-menus -->
+<menuitem 
+    id="sub_menu_liste_immobilier" 
+    name="Liste des Biens" 
+    parent="menu_immobilier" 
+    action="action_immobilier_list"
+    sequence="1"/>
+
+<menuitem 
+    id="sub_menu_new_immobilier" 
+    name="Nouveau Bien" 
+    parent="menu_immobilier" 
+    action="action_immobilier_form"
+    sequence="2"/>
+
+
 </odoo>
