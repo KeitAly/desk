@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+ <!-- vue tree des location -->
+        <record id="view_location_tree"  model="ir.ui.view">
+        <field name="name">location.tree</field>
+        <field name="model">location</field>
+        <field name="arch" type="xml" >
+            <tree  class="tree" string="Partenaires" create="true" delete="false" duplicate='false'>
+                  <!-- boutton de suppression des partenaires -->
+                <field name="locataire_id"/>
+                <field name="immobilier_id"/> 
+                <field name="bailleur_id"/>
+                <field name="date_debut"/>
+                <field name="date_fin"/>
+                <field name="montant_loyer"/>
+            </tree>
+
+        </field>
+    </record>
+
+ <!-- vue form -->
+
+  <record id="view_location_form" model="ir.ui.view">
+        <field name="name">location.form</field>
+        <field name="model">location</field>
+        <field name="arch" type="xml" >
+            <form  class="form" string="locations" >
+                <group>                    
+                    <field name="locataire_id"/>
+                    <field name="immobilier_id"/>
+                    <field name="date_debut"/>
+                    <field name="duree_location"/>
+                    <field name="date_fin" readonly="1" force_save="1" />
+                    <field name="bailleur_id"  />
+                    <field name="montant_loyer" readonly="1" force_save="1"/>
+                   
+            </group>
+            </form>
+        </field>
+    </record>
+
+
+
+ <!-- action tree location -->
+
+  <record id="action_location_tree" model="ir.actions.act_window">
+        <field name="name">locations</field>
+        <field name="res_model">location</field>
+        <field name="view_mode">tree</field>
+         <field name="view_id" ref="view_location_tree"/>
+ </record>
+
+
+  <!-- action form partenaire -->
+
+  <record id="action_location_form" model="ir.actions.act_window">
+        <field name="name">location</field>
+        <field name="res_model">location</field>
+        <field name="view_mode">form</field>
+ </record>
+
+</odoo>

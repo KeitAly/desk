@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Définition du modèle de rapport -->
+    <template id="desk.template_location">
+        <t t-call="web.html_container">
+             <head>
+            <!-- Ensure proper charset encoding for the template -->
+            <meta charset="UTF-8"/>
+        </head>
+      
+            <t t-foreach="docs" t-as="doc">
+               <t t-set="date_debut" t-value="doc.date_debut"/>
+                <t t-set="date_fin" t-value="doc.date_fin"/>
+                <t t-set="locataire" t-value="doc.locataire_id.nom+ ' ' + doc.locataire_id.prenom"/>
+                <t t-set="immobilier" t-value="doc.immobilier_id"/>
+                <t t-set="adress" t-value="doc.immobilier_id.adresse"/>
+                <t t-set="montant_loyer" t-value="doc.montant_loyer"/>
+                <t t-set="duree_location" t-value="doc.duree_location"/>
+                
+                <div class="page">
+                    <h2 style="text-align:center;">Contrat de Location</h2>
+                    <p>Entre les soussignés :</p>
+                    <p><strong>Locataire :</strong> <span t-esc="locataire"/></p>
+                    <p><strong>Bailleur :</strong> <span t-esc="doc.bailleur_id.nom"/>  <span t-esc="doc.bailleur_id.prenom"/></p>
+                    <p><strong>Bien immobilier :</strong> <span t-esc="immobilier"/> <span t-esc="adress"/></p>
+                    <p><strong>Durée de la location :</strong> <span t-esc="duree_location"/> mois</p>
+                    <p><strong>Date de début :</strong> <span t-esc="date_debut"/></p>
+                    <p><strong>Date de fin :</strong> <span t-esc="date_fin"/></p>
+                    <p><strong>prix du location :</strong> <span t-esc="montant_loyer"/> xof</p>
+                    <p>Ce contrat est conclu sous les conditions suivantes :</p>
+                    <ul>
+                        <li>Le locataire s'engage à verser le montant  total  de la location conformément aux termes du contrat.</li>
+                        <li>Le bailleur s'engage à fournir le bien immobilier pour la durée convenue.</li>
+                    </ul>
+                    <p>Fait à           le           </p>
+                    <div style="display:flex;justify-content: space-around;">
+                        <div style="text-align:right;"><strong>Signature du locataire</strong></div>
+                        
+                        <div style="text-align:left;"><strong>Signature du bailleur</strong></div>
+                    </div>
+                </div>
+                        
+            </t>
+        </t>
+      
+    </template>
+
+    <!-- Action de rapport pour le contrat de location -->
+    <record id="action_report_location_contract" model="ir.actions.report">
+        <field name="name">Contrat de Location PDF</field>
+        <field name="model">location</field>
+        <field name="report_name">desk.template_location</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="model_location"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

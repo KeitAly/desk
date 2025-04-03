@@ -1,2 +1,1 @@
-from . import partenaire
-from . import immobilier 
+from . import partenaire,immobilier,location

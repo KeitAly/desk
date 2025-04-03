@@ -69,7 +69,8 @@
         <field name="name">Partenaires</field>
         <field name="res_model">partenaire</field>
         <field name="view_mode">tree</field>
-         <field name="view_id" ref="view_partenaire_tree"/>
+        <field name="view_id" ref="view_partenaire_tree"/>
+        <field name="domain">[('supprimer', '=',False)]</field>
  </record>
 
   <!-- action tree ancien partenaire -->

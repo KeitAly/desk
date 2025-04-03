@@ -6,8 +6,8 @@
         <field name="name">immobilier.tree</field>
         <field name="model">immobilier</field>
         <field name="arch" type="xml">
-            <tree class="tree">
-                <field name="name"/>
+            <tree class="tree" delete="false" duplicate='false'>
+                <field name="description"/>
                 <field name="bailleur_id"/>
                 <field name="prix"/>
                 <field name="date_dispo"/>
@@ -23,7 +23,7 @@
             <form >
                 <sheet>
                     <group >
-                        <field name="name"/>
+                        <field name="description"/>
                         <field name="bailleur_id"/>
                         <field name="adresse"/>
                         <field name="prix"/>
@@ -45,7 +45,7 @@
         <field name="name">Nouveau Bien</field>
         <field name="res_model">immobilier</field>
         <field name="view_mode">form</field>
-        <field name="target">new</field>
+        <field name="target" >new</field>
     </record>
 
 </odoo>

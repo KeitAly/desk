@@ -8,7 +8,10 @@
         'security/ir.model.access.csv',
         'views/partenaire.xml',
         'views/immobilier.xml',
+        'views/location.xml',
         'views/menu.xml',
+        'reports/contrat_report.xml',
+        
     ],
     'assets':{
         'web.assets_backend':['desk/static/css/global.css']
