@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Vue Liste -->
+    <record id="view_immobilier_tree" model="ir.ui.view">
+        <field name="name">immobilier.tree</field>
+        <field name="model">immobilier</field>
+        <field name="arch" type="xml">
+            <tree class="tree" delete="false" duplicate='false'>
+                <field name="description"/>
+                <field name="bailleur_id"/>
+                <field name="prix"/>
+                <field name="date_dispo"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vue Formulaire -->
+    <record id="view_immobilier_form" model="ir.ui.view">
+        <field name="name">immobilier.form</field>
+        <field name="model">immobilier</field>
+        <field name="arch" type="xml">
+            <form >
+                <sheet>
+                    <group >
+                        <field name="description"/>
+                        <field name="bailleur_id"/>
+                        <field name="adresse"/>
+                        <field name="prix"/>
+                        <field name="date_dispo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Actions -->
+    <record id="action_immobilier_list" model="ir.actions.act_window">
+        <field name="name">Liste des Biens</field>
+        <field name="res_model">immobilier</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record id="action_immobilier_form" model="ir.actions.act_window">
+        <field name="name">Nouveau Bien</field>
+        <field name="res_model">immobilier</field>
+        <field name="view_mode">form</field>
+        <field name="target" >new</field>
+    </record>
+
+</odoo>

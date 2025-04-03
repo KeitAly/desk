@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+
+ <!-- vue tree des partenaire -->
+        <record id="view_partenaire_tree"  model="ir.ui.view">
+        <field name="name">partenaire.tree</field>
+        <field name="model">partenaire</field>
+        <field name="arch" type="xml" >
+            <tree  class="tree" string="Partenaires" create="true" delete="false" duplicate='false'>
+                  <!-- boutton de suppression des partenaires -->
+                <header>
+                    <button type="object" name="supression" string="supprimer" class="oe_highlight"/>
+                </header>
+                <field name="type_part"/>
+                <field name="nom"/>
+                <field name="prenom"/>
+                <field name="tel"/>
+                <field name="adress"/>
+            </tree>
+
+        </field>
+    </record>
+
+ <!-- vue tree des anciens partenaires -->
+
+        <record id="view_acien_partenaire" model="ir.ui.view">
+        <field name="name">partenaire.tree</field>
+        <field name="model">partenaire</field>
+        <field name="arch" type="xml" >
+            <tree  class="tree" create="true" delete="false" duplicate='false'  string="Partenaires" >
+                <field name="type_part"/>
+                <field name="nom"/>
+                <field name="prenom"/>
+                <field name="tel"/>
+                <field name="adress"/>
+                <field name="supprimer"/>
+            </tree>
+
+        </field>
+    </record>
+
+
+
+
+ <!-- vue form -->
+
+  <record id="view_partenaire_form" model="ir.ui.view">
+        <field name="name">partenaire.form</field>
+        <field name="model">partenaire</field>
+        <field name="arch" type="xml" >
+            <form  class="form" string="Partenaires" >
+                <group>                    
+                        <field name="type_part" />
+                        <field name="nom"/>
+                        <field name="prenom"/>
+                        <field name="tel"/>
+                        <field name="adress"/>
+                  </group>
+            </form>
+        </field>
+    </record>
+
+
+
+ <!-- action tree partenaire -->
+
+  <record id="action_partenaire_tree" model="ir.actions.act_window">
+        <field name="name">Partenaires</field>
+        <field name="res_model">partenaire</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_partenaire_tree"/>
+        <field name="domain">[('supprimer', '=',False)]</field>
+ </record>
+
+  <!-- action tree ancien partenaire -->
+
+  <record id="action_ancien_partenaire" model="ir.actions.act_window">
+        <field name="name">Ancien partenaire</field>
+        <field name="res_model">partenaire</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="view_acien_partenaire"/>
+        <field name="domain">[('supprimer', '=',True)]</field>
+  </record>
+
+  <!-- action form partenaire -->
+
+  <record id="action_partenaire_form" model="ir.actions.act_window">
+        <field name="name">Partenaires</field>
+        <field name="res_model">partenaire</field>
+        <field name="view_mode">form</field>
+ </record>
+
+</odoo>

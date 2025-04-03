@@ -1,0 +1,29 @@
+.tree table{
+    width: 80%;
+    justify-self: center;
+    border: 2px solid black;
+    margin-top: 2%;
+}
+.o_web_client .tree,.form {
+    background-image: url("/desk/static/image/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+ 
+}
+
+
+.form .o_form_renderer{
+    width: 50%;
+    margin-top: 2%;
+    justify-self: center;
+    border-radius: 25px;
+}
+
+o_control_panel{
+    border: none;
+
+}
+
+.tree table thead > tr > th{
+    background-color: #71639e !important;
+}

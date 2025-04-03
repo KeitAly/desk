@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <menuitem
+    id="menu_principle"
+    name="Desk"
+    />
+ <!-- menu location-->
+    <menuitem id="menu_location" 
+    name="Location" parent="menu_principle" 
+    sequence="1" />
+
+
+    <!-- menu partenaire-->
+    <menuitem id="menu_partenaire" 
+    name="Partenaires" parent="menu_principle" 
+    sequence="2" />
+        <!-- menu liste des partenaires-->
+        <menuitem id="partenaire_liste" 
+            name="liste" parent="menu_partenaire" 
+            sequence="1" action="action_partenaire_tree"/>
+        <!-- menu liste des anciens partenaires-->
+        <menuitem id="action_ancien_part" 
+            name="ancien partenaire" parent="menu_partenaire" 
+            sequence="3" action="action_ancien_partenaire"/>
+            <!-- menu nouveau partenaires-->
+        <menuitem id="partenaire_form" 
+            name="Nouveau" parent="menu_partenaire" 
+            sequence="2" action="action_partenaire_form"/>
+
+
+   <!-- menu immobilier-->
+    <menuitem id="menu_immobilier" 
+    name="Immobilier" parent="menu_principle" 
+    sequence="3" />
+
+        <!-- Sous-menus -->
+        <menuitem 
+            id="sub_menu_liste_immobilier" 
+            name="Liste des Biens" 
+            parent="menu_immobilier" 
+            action="action_immobilier_list"
+            sequence="1"/>
+
+        <menuitem 
+            id="sub_menu_new_immobilier" 
+            name="Nouveau Bien" 
+            parent="menu_immobilier" 
+            action="action_immobilier_form"
+            sequence="2"/>
+    
+<!-- menu location-->
+<menuitem id="menu_location" 
+name="location" parent="menu_principle" 
+sequence="1" />
+        <!-- menu liste des location-->
+        <menuitem id="location_liste" 
+            name="Contrat" parent="menu_location" 
+            sequence="2" action="action_location_tree"/>
+               <!-- menu nouveau location-->
+        <menuitem id="location_form" 
+            name="Nouveau" parent="menu_location" 
+            sequence="1" action="action_location_form"/>
+
+</odoo>
